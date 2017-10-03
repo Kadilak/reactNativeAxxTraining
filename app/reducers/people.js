@@ -1,13 +1,12 @@
 // reducers/people.js
 import { ADD_PERSON, DELETE_PERSON, CHANGE_STATUS } from '../constants';
 
-const initialState = { people: [{id:1, name: 'Axxiome1',status: false },{id:2, name: 'Axxiome2', status: true },{id:3, name: 'Axxiome4', status: true }]}
+const initialState = { people: []}
 
 export default function peopleReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_PERSON:
-    debugger;
-    return {
+      return {
         people: [...state.people, action.person],
       };
     case DELETE_PERSON:

@@ -2,10 +2,10 @@ import { ADD_PERSON, DELETE_PERSON } from '../constants';
 
 let nextPersonId = 4;
 
-export function addPerson(person) {
+export function addPerson(person,maxId) {
   return {
     type: 'ADD_PERSON',
-    person: {id: nextPersonId++,...person, status: false}
+    person: {id: maxId,...person, status: false}
   };
 }
 

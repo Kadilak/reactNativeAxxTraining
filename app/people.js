@@ -18,9 +18,11 @@ class People extends React.Component {
   }
   addPerson = () => {
     if (this.state.inputValue === '') return;
-    this.props.dispatchAddPerson({
-      name: this.state.inputValue,
-    });
+    maxId = this.props.people.length != 0 ? (this.props.people[this.props.people.length-1].id + 1) : 1;
+    this.props.dispatchAddPerson(
+      { name: this.state.inputValue },
+      maxId
+    );
     this.setState({ inputValue: '' });
   }
   deletePerson = (person) => {
@@ -124,7 +126,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    dispatchAddPerson: (person) => dispatch(addPerson(person)),
+    dispatchAddPerson: (person,maxId) => dispatch(addPerson(person,maxId)),
     dispatchdeletePerson: (person) => dispatch(deletePerson(person)),
     dispatchchangeStatus: (index) => dispatch(changeStatus(index))
 }
