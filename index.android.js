@@ -17,7 +17,7 @@ export default class todolist extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!Axxiome
+          Welcome to React Native!Axxiome2
 
         </Text>
         <Text style={styles.instructions}>
