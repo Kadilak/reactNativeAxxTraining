@@ -15,13 +15,15 @@ class Task extends React.Component {
     const { navigate } = this.props.navigation;
     let { task } = this.props;
     return (
-      <View style={{flex: 1, flexDirection: 'row',justifyContent: 'center'}}>
-        <Text style={styles.title}>{task.name}{task.status ? " - !!!DONE!!!":""}</Text>
-        <Button title="Details" onPress={() => navigate('TaskDetails', { task })}/>
+      <View style={styles.wrapper}>
+        <View style={{flexDirection: 'row',}}>
         <Switch disabled={true}
-          style={{marginBottom: 10}}
+          style={{marginBottom: 10, marginLeft:0, paddingLeft:0,}}
           value={task.status}
         />
+        <Text style={styles.text}>{task.name}{task.status ? " - !!!DONE!!!":""}</Text>
+        </View>
+        <Button style={styles.title} title="Details" onPress={() => navigate('TaskDetails', { task })}/>
       </View>
     )
   }
@@ -32,7 +34,22 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 20,
   },
+  wrapper: {
+    //display: 'block',
+    flex: 1, 
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding:5,
+  },
   title: {
+    fontSize: 22,
+    textAlign: 'left',
+  },
+  text: {
+    fontSize: 22,
+    justifyContent: 'flex-start',
+  },
+  button: {
     fontSize: 22,
     textAlign: 'center',
   }
