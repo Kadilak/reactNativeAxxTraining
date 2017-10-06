@@ -13,6 +13,7 @@ import { deletePerson, changeStatus } from './actions/actions';
 class TaskActions extends React.Component {
   deletePerson = (person) => {
     this.props.dispatchdeletePerson(person)
+    this.props.navigation.navigate('Home');
   }
   changeStatus = (index) => {
     this.props.dispatchchangeStatus(index)

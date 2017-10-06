@@ -18,7 +18,7 @@ class TaskDetails extends React.Component {
           <Text style={styles.title}>{id}</Text>
           <Text style={styles.title}>{name}</Text>
           <Text style={styles.title}>{status ? "YES" : "NOOO!!"}</Text>
-          <TaskActions task={task}/>
+          <TaskActions task={task} navigation={this.props.navigation}/>
       </View>
     )
   }
