@@ -4,15 +4,18 @@ import {
   View,
   StyleSheet
 } from 'react-native';
+import TaskActions from './taskactions'
 
 class TaskDetails extends React.Component {
   static navigationOptions = {
     title: 'TaskDetails Welcome',
   };
   render() {
-    let {id,name,status} = this.props.navigation.state.params.task;
+    let {task} = this.props.navigation.state.params;
+    let {id,name,status} = task;
     return (
       <View>
+          <TaskActions task={task}/>
           <Text style={styles.title}>{id}</Text>
           <Text style={styles.title}>{name}</Text>
           <Text style={styles.title}>{status ? "YES" : "NOOO!!"}</Text>
