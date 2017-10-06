@@ -6,10 +6,8 @@ import {
 } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
-import TaskList from './tasklist';
-import Spinner from './spinner'
-//import People from './people';
-import { StackNavigator } from 'react-navigation';
+import TaskListNav from './tasklistnav';
+import Spinner from './spinner';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,26 +19,20 @@ class App extends React.Component {
     setTimeout(() => {
         this.setState({loadingTasks: false})
         console.log('Timeout ended after 3sec');      
-      }, 3000
+      }, 500
     );
   }
 
   renderMainApp(){
     if(!this.state.loadingTasks){
-      return (<TaskList/>);
+      return (<TaskListNav/>)      
     } else {
       return (<Spinner/>);
     }
   }
   render() {
     debugger;
-    return (
-      <View>
-        {
-          this.renderMainApp()
-        }
-      </View>
-    )
+    return this.renderMainApp()
   }
 }
 

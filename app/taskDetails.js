@@ -4,17 +4,17 @@ import {
   View
 } from 'react-native';
 
-class TaskList extends React.Component {
+class TaskDetails extends React.Component {
   static navigationOptions = {
-    title: 'TaskList Welcome',
+    title: 'TaskDetails Welcome',
   };
   render() {
     return (
       <View>
-          <Text>TaskList</Text>
+          <Text>TaskDetails</Text>
       </View>
     )
   }
 }
 
-export default TaskList;
+export default TaskDetails;
