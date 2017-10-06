@@ -9,9 +9,12 @@ class TaskDetails extends React.Component {
     title: 'TaskDetails Welcome',
   };
   render() {
+    let {id,name,status} = this.props.navigation.state.task;
     return (
       <View>
-          <Text>TaskDetails</Text>
+          <Text>{id}</Text>
+          <Text>{name}</Text>
+          <Text>{status}</Text>
       </View>
     )
   }

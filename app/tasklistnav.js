@@ -9,7 +9,7 @@ import TaskDetails from './taskDetails';
 
 export const TaskListNav = StackNavigator({
     Home: { screen: TaskList },
-    TaskDetails: { screen: TaskList },
+    TaskDetails: { screen: TaskDetails },
 });
 
 export default TaskListNav;
