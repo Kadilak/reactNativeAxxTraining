@@ -19,7 +19,7 @@ class App extends React.Component {
     setTimeout(() => {
         this.setState({loadingTasks: false})
         console.log('Timeout ended after 3sec');      
-      }, 200
+      }, 2000
     );
   }
 

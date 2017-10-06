@@ -1,7 +1,8 @@
 import React from 'react';
 import { 
   Text,
-  View
+  View,
+  StyleSheet
 } from 'react-native';
 
 class TaskDetails extends React.Component {
@@ -9,15 +10,24 @@ class TaskDetails extends React.Component {
     title: 'TaskDetails Welcome',
   };
   render() {
-    let {id,name,status} = this.props.navigation.state.task;
+    let {id,name,status} = this.props.navigation.state.params.task;
     return (
       <View>
-          <Text>{id}</Text>
-          <Text>{name}</Text>
-          <Text>{status}</Text>
+          <Text style={styles.title}>{id}</Text>
+          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.title}>{status ? "YES" : "NOOO!!"}</Text>
       </View>
     )
   }
 }
-
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    padding: 20,
+  },
+  title: {
+    fontSize: 22,
+    textAlign: 'center',
+  }
+});
 export default TaskDetails;
