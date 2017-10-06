@@ -6,13 +6,13 @@ import {
 } from 'react-native';
 import { DrawerNavigator } from 'react-navigation';
 import { connect } from 'react-redux';
-//import People from './people';
+import TaskList from './tasklist';
 
 class App extends React.Component {
   render() {
     return (
       <View>
-          <Text>AppComponent</Text>
+          <TaskList/>
       </View>
     )
   }
