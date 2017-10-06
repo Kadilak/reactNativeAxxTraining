@@ -2,7 +2,9 @@ import React from 'react';
 import { 
   Text,
   View,
-  Button
+  Button,
+  StyleSheet,
+  Switch
 } from 'react-native';
 
 class Task extends React.Component {
@@ -14,14 +16,27 @@ class Task extends React.Component {
     let { task } = this.props;
     return (
       <View style={{flex: 1, flexDirection: 'row',justifyContent: 'center'}}>
-        <Text>{task.name}</Text>
+        <Text style={styles.title}>{task.name}{task.status ? " - !!!DONE!!!":""}</Text>
         <Button title="Details" onPress={() => navigate('TaskDetails', { task })}/>
-        <Button title="X"/>
+        <Switch disabled={true}
+          style={{marginBottom: 10}}
+          value={task.status}
+        />
       </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    marginTop: 20,
+    padding: 20,
+  },
+  title: {
+    fontSize: 22,
+    textAlign: 'center',
+  }
+});
   
   /* <View style={{flex: 1, flexDirection: 'row',justifyContent: 'center'}}>
 <Text 
