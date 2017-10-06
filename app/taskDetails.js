@@ -15,10 +15,10 @@ class TaskDetails extends React.Component {
     let {id,name,status} = task;
     return (
       <View>
-          <TaskActions task={task}/>
           <Text style={styles.title}>{id}</Text>
           <Text style={styles.title}>{name}</Text>
           <Text style={styles.title}>{status ? "YES" : "NOOO!!"}</Text>
+          <TaskActions task={task}/>
       </View>
     )
   }

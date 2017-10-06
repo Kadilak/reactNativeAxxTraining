@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPerson, deletePerson, changeStatus } from './actions/actions';
+import { addPerson} from './actions/actions';
 import Task from './task';
 import {
   StyleSheet,
@@ -28,12 +28,6 @@ class TaskList extends React.Component {
     );
     this.setState({ inputValue: '' });
   }
-  deletePerson = (person) => {
-    this.props.dispatchdeletePerson(person)
-  }
-  changeStatus = (index) => {
-    this.props.dispatchchangeStatus(index)
-}
   updateInput = (inputValue) => {
     this.setState({ inputValue })
   }
@@ -122,9 +116,7 @@ function mapStateToProps (state,props) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    dispatchAddPerson: (person,maxId) => dispatch(addPerson(person,maxId)),
-    dispatchdeletePerson: (person) => dispatch(deletePerson(person)),
-    dispatchchangeStatus: (index) => dispatch(changeStatus(index))
+    dispatchAddPerson: (person,maxId) => dispatch(addPerson(person,maxId))
 }
 }
 
